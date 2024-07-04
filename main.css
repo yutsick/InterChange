@@ -1,0 +1,245 @@
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import tw-elements CSS */
+/* @import 'tw-elements/dist/css/index.min.css'; */
+
+@layer components {
+
+    :root {
+        --swiper-theme-color: #fff !important;
+        --swiper-pagination-color: #0A0A0A !important;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        height: max-content !important;
+        padding-bottom: 64px !important;
+        -webkit-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+        position: relative;
+        padding: 1px;
+    }
+    .swiper-slide{
+        height: unset !important;
+    }
+    .swiper-pagination {
+        height: 1px !important;
+    }
+
+    .progress-slide-carousel {
+        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+            background: var(--swiper-theme-color) !important;
+            top: -0.5px;
+
+        }
+    }
+
+    .latest-slide-carousel,
+    .featured-slide-carousel {
+        .progress-slide-carousel {
+            .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+                background: var(--swiper-pagination-color) !important;
+            }
+        }
+    }
+
+
+    .star {
+        position: relative;
+        width: fit-content;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -52px;
+            right: -56px;
+            background-image: url('./images/star.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 112px;
+            height: 106px;
+            z-index: -1;
+        }
+    }
+
+    .jupiter {
+        position: relative;
+        width: fit-content;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            right: -41px;
+            background-image: url('./images/jupiter.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 57px;
+            height: 40px;
+            z-index: -1;
+        }
+    }
+
+    .border-gradient {
+        /* position: relative; */
+        background: #161616;
+        background-clip: padding-box; 
+        border: solid 1px transparent; 
+        height: 100%;
+        /* border: solid 1px #8B7D54; */
+    }
+    .brd-wrapper{
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px; 
+            border-radius: 12px; 
+            background: linear-gradient(135deg, #F1D991, #8B7D54);
+          }
+    }
+
+
+    .btn {
+        transition: all 0.5s;
+    }
+
+    .inner-shadow {
+        box-shadow: inset 0 -8px 4px 0 rgba(255, 255, 255, 0.02);
+    }
+
+    .secondary {
+        &:hover {
+            background-color: rgba(241, 217, 145, 0.5);
+        }
+    }
+
+    header {
+        background-image: url('./images/planet.svg');
+        background-repeat: no-repeat;
+        background-position: center 40%;
+    }
+
+    .header-blocks {
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 91%);
+        min-height: 325px;
+    }
+
+    .header-block {
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(2px);
+        /* border: solid 1.5px rgba(241, 217, 145, 0.1); */
+        height: fit-content;
+    }
+
+    .portfolio {
+        .header-block {
+            padding: 40px 40px 64px;
+            border-radius: 12px;
+            .hover {
+                opacity: 0;
+                transition: 0.5s ease-in-out;
+            }
+
+            &.active {
+                .hover {
+                    opacity: 1;
+                }
+            }
+        }  
+        .border-gradient{
+            background: #161616;
+            height: 100%; 
+        }
+
+        
+    }
+
+    .latest {
+        .header-block {
+            box-shadow: 2px 6px 10px rgba(55, 65, 81, 0.08);
+            /* border: solid 1px #8B7D54; */
+            transition: 0.5s ease-in-out;
+            background: linear-gradient(135deg, #FFF, #FFF);
+
+            .badge {
+                background: rgba(241, 217, 145, 0.2);
+                border: solid 1px #C0A355;
+            }
+
+            .hover {
+                opacity: 0;
+                transition: 0.5s ease-in-out;
+            }
+
+            &:hover {
+                transition: 0.5s ease-in-out;
+                background: linear-gradient(135deg, #FFFBED, #FFEDB9);
+
+                .hover {
+                    opacity: 1;
+                }
+
+                .badge {
+                    background: #C0A355;
+                    color: #FFF;
+                }
+            }
+        }
+        .border-gradient{
+            background: #fff;;
+        }
+    }
+
+    .custom-hr {
+        border: none;
+        border-top: 0.5px solid rgba(198, 198, 200, 0.5);
+
+    }
+
+    .why-bg {
+        background-image: url('./images/why-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        backdrop-filter: opacity(0.3);
+
+
+    }
+
+    .why-card {
+        background-color: rgba(255, 255, 255, 0.2);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        backdrop-filter: blur(25px);
+    }
+
+    .how-card {
+        box-shadow: 2px 6px 10px rgba(55, 65, 81, 0.08);
+        border-radius: 12px;
+    }
+
+    .cta {
+        background-image: url('./images/planet-cta.svg');
+        background-repeat: no-repeat;
+        background-position: center 300%;
+
+
+    }
+
+    .cta-bg {
+        /* background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%); */
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+    }
+
+    .copy {
+        border-top: solid 1px #333;
+    }
+
+}
